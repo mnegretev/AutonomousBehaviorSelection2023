@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="max_speed" default="50"/>
+  <arg name="k_following" default="10"/>
+  <arg name="dist_to_car" default="15"/>  
+  <arg name="goal_dist" default="400"/>    
+  
+  <env name="WEBOTS_HOME" value="/usr/local/webots"/>
+  <arg name="no_gui" default="false," doc="Start Webots with minimal GUI"/>
+
+  <include file="$(find webots_ros)/launch/webots.launch">
+    <arg name="mode" value="realtime"/>
+    <arg name="no_gui" value="$(arg no_gui)"/>
+    <arg name="world" value="$(find aai_2023)/worlds/world_static_10.wbt"/>
+  </include>
+  
+  <node name="lane_detector" pkg="aai_2023" type="lane_detector_canny_hough.py" output="screen"/>
+  <node name="obstacle_detector" pkg="aai_2023" type="obstacle_detector.py" output="screen"/>
+  <node name="behaviors" pkg="aai_2023" type="behaviors.py" output="screen">
+      <param name="max_speed" value="$(arg max_speed)"/>
+      <param name="k_following" value="$(arg k_following)"/>
+      <param name="dist_to_car" value="$(arg dist_to_car)"/>
+  </node>
+  
+  <node name="success" pkg="aai_2023" type="success.py" output="screen"/>
+  <node name="stop" pkg="aai_2023" type="stop.py" output="screen"/>
+  <node name="lane_identification" pkg="aai_2023" type="lane_identification.py" output="screen"/>
+  <node pkg="tf" type="static_transform_publisher" name="car_to_lidar"  args="  0 0 2.0 0 0 0 car_link lidar_link 30"/>
+  <node pkg="tf" type="static_transform_publisher" name="car_to_camera" args="1.2 0 1.5 0 0 0 car_link camera_link 30"/>
+  <node pkg="tf" type="static_transform_publisher" name="car_to_gyro"   args="  0 0 0.1 0 0 0 car_link gyro_link 30"/>
+  <node name="goal_reached" pkg="aai_2023" type="goal_reached.py" output="screen">
+      <param name="goal_dist" value="$(arg goal_dist)"/>
+  </node>    
+  <node pkg="tf" type="static_transform_publisher" name="car_to_accelerometer"   args="  0 0 0.1 0 0 0 car_link accel_link 30"/>  
+  <node pkg="tf" type="static_transform_publisher" name="car_to_gps"    args="  0 0 0.1 0 0 0 car_link gps_link 10"/>
+
+
+   <node name="policy" pkg="aai_2023" type="policy.py" output="screen">
+    <param name="left_cars_speed" value="0"/>
+    <param name="right_cars_speed" value="0"/>
+  </node>
+</launch>

@@ -1,0 +1,293 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+  ERP 0.6
+  basicTimeStep 10
+  lineScale 5
+  contactProperties [
+    ContactProperties {
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "CitroenCZeroWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "ToyotaPriusWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "LincolnMKZWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "RangeRoverSportSVRWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "TruckWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.5508235815518276 -0.540206432071482 0.6362156810037113 4.281088485933226
+  position 63.27658169847355 13.480558924317481 149.43893692005156
+  near 1
+  follow "vehicle"
+  lensFlare LensFlare {
+  }
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 10000 10000
+  tileSize 1 1
+  appearance PBRAppearance {
+    baseColor 0.45098 0.823529 0.0862745
+    baseColorMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2022a/projects/vehicles/worlds/textures/ground_grass.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+    emissiveIntensity 0
+  }
+}
+StraightRoadSegment {
+  translation 880 0 0.1
+  name "segment_9"
+  length 110
+  roadBoundingObject TRUE
+  rightBorderBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+StraightRoadSegment {
+  translation 770 0 0.1
+  name "segment_8"
+  length 110
+  roadBoundingObject TRUE
+  rightBorderBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+StraightRoadSegment {
+  translation 660 0 0.1
+  name "segment_7"
+  length 110
+  roadBoundingObject TRUE
+  rightBorderBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+StraightRoadSegment {
+  translation 550 0 0.1
+  name "segment_6"
+  length 110
+  roadBoundingObject TRUE
+  rightBorderBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+StraightRoadSegment {
+  translation 440 0 0.1
+  name "segment_5"
+  length 110
+  roadBoundingObject TRUE
+  rightBorderBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+SpeedLimitPanel {
+  translation 0.023 0 0
+  signImage [
+    "../resources/SpeedLimit20.png"
+  ]
+}
+SpeedLimitPanel {
+  name "speed limit panel(1)"
+  signImage [
+    "../resources/SpeedLimit20.png"
+  ]
+}
+StraightRoadSegment {
+  translation 120 0 0.1
+  name "segment_2"
+  length 110
+  roadBoundingObject TRUE
+  rightBorderBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+StraightRoadSegment {
+  translation 230 0 0.1
+  name "segment_3"
+  length 660
+  roadBoundingObject TRUE
+  rightBorderBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+StraightRoadSegment {
+  translation 340 0 0.1
+  name "segment_4"
+  length 110
+  roadBoundingObject TRUE
+  rightBorderBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+DEF BMW_X5 BmwX5 {
+  hidden linearVelocity_0 -3.227429515943933e-06 2.7913724892215045e-15 6.059796461504317e-06
+  hidden angularVelocity_0 -3.5157920934540944e-15 -6.505177568711147e-06 3.911354595627453e-15
+  translation 10.282903821112917 -1.8100000000000092 0.4169191576442518
+  rotation -1.1889576741483064e-14 -1 2.2651330356464375e-12 0.004494610325100353
+  color 0.643137 0 0
+  controller "bmw_x5_controller"
+  sensorsSlotTop [
+    Accelerometer {
+    }
+    Camera {
+      translation 0.8 0 -0.1
+      rotation 0 1 0 0.07
+      boundingObject TexturedBox {
+      }
+      width 1280
+      height 960
+      noise 0.02
+    }
+    VelodyneHDL-64E {
+      translation 0.3 0 0.15
+      enablePhysics FALSE
+    }
+  ]
+}
+StraightRoadSegment {
+  translation 10 0 0.1
+  name "segment_1"
+  length 110
+  roadBoundingObject TRUE
+  rightBorderBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+}
+SpeedLimitSign {
+  translation 120 -4.5 0
+  rotation 0 0 1 -3.1415853071795863
+  signBoards [
+    SpeedLimitPanel {
+      translation 0.023 0 0
+      signImage [
+        "../resources/SpeedLimit20.png"
+      ]
+    }
+  ]
+}
+SpeedLimitSign {
+  translation 340 -4.5 0
+  rotation 0 0 1 -3.1415853071795863
+  name "speed limit(1)"
+  signBoards [
+    SpeedLimitPanel {
+      translation 0.023 0 0
+      signImage [
+        "../resources/SpeedLimit20.png"
+      ]
+    }
+  ]
+}
+SpeedLimitSign {
+  translation 450 -4.5 0
+  rotation 0 0 1 -3.1415853071795863
+  name "speed limit(2)"
+  signBoards [
+    SpeedLimitPanel {
+      translation 0.023 0 0
+      signImage [
+        "../resources/SpeedLimit20.png"
+      ]
+    }
+  ]
+}
+HighwayPole {
+  translation 16 -5.5 0
+  rotation 0 0 1 3.141592
+  name "roadPole"
+  length 7
+  rightHorizontalSigns [
+    HighwaySign {
+      name "vertical sign"
+      height 1.5
+      length 6.5
+      texture [
+        "../resources/FMR.jpg"
+      ]
+    }
+  ]
+  rightVerticalSigns [
+    HighwaySign {
+      name "horizontal sign"
+      height 2.1
+      length 3.2
+      texture [
+        "../resources/Xalapa.jpg"
+      ]
+    }
+  ]
+}
+DEF vehicle_1 LincolnMKZSimple {
+  translation 35.13 -1.57 0.45
+  name "1"
+}
+DEF vehicle_2 RangeRoverSportSVRSimple {
+  translation 75.25 1.58987 0.45
+  rotation 0 0 1 4.692820414042842e-06
+  name "2"
+}
+DEF vehicle_3 CitroenCZeroSimple {
+  translation 115.83 -1.54 0.45
+  name "3"
+}
+DEF vehicle_4 TeslaModel3Simple {
+  translation 155.89 1.54 0.4
+  name "4"
+}
+DEF vehicle_5 RangeRoverSportSVRSimple {
+  translation 195.81 -1.11 0.46
+  color 0.8 0.7 0.65
+  name "5"
+}
+Robot {
+  controller "supervisor_icra"
+  supervisor TRUE
+}
