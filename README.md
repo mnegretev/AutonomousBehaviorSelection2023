@@ -20,19 +20,19 @@ Methodology details are described in the contributed paper.
 Note: It is assumed that Ubuntu OS, ROS platform and Webots simulator are already installed. 
 
 * $ cd
-* $ git clone https://github.com/hector-aviles/ICRA2024
-* $ cd ICRA2024/catkin_ws
+* $ git clone https://github.com/mnegretev/Autonomous_Behavior_Selection_2023
+* $ cd Autonomous_Behavior_Selection_2023/catkin_ws
 * $ catkin_make
-* $ echo "source ~/ICRA2024/catkin_ws/devel/setup.bash" >> ~/.bashrc
+* $ echo "source ~/Autonomous_Behavior_Selection_2023/catkin_ws/devel/setup.bash" >> ~/.bashrc
 * $ source ~/.bashrc
 
 ## Testing
 
 To test each experiment:
 
-* $ roslaunch icra2024 experiment1_5_cars.launch
-* $ roslaunch icra2024 experiment1_10_cars.launch
-* $ roslaunch icra2024 experiment2.launch
+* $ roslaunch aai_2023 experiment1_5_cars.launch
+* $ roslaunch aai_2023 experiment1_10_cars.launch
+* $ roslaunch aai_2023 experiment2.launch
 
 In each experiment you should see a simulator like this:
 
@@ -40,7 +40,9 @@ In each experiment you should see a simulator like this:
 
 ## Video
 
-https://github.com/hector-aviles/ICRA2024/assets/17507149/d2f77a45-7d76-40a6-aa41-a385728b1e6e
+
+https://github.com/mnegretev/Autonomous_Behavior_Selection_2023/assets/17507149/209a301f-db8b-4e0e-a4af-6ea34c47536a
+
 
 ## Contact
 
